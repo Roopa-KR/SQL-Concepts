@@ -7,3 +7,6 @@ use Triggers;
  salary float
  );
 
+ create table logged_data(
+ log_id bigint primary key auto_increment,
+ created_at TIMESTAMP default CURRENT_TIMESTAMP
