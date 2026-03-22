@@ -9,4 +9,19 @@ use Triggers;
 
  create table logged_data(
  log_id bigint primary key auto_increment,
- created_at TIMESTAMP default CURRENT_TIMESTAMP
+ created_at TIMESTAMP default CURRENT_TIMESTAMP,
+ message varchar(200)
+ );
+
+ DELIMITER //
+
+ CREATE TRIGGER insert_trigger
+ AFTER INSERT
+ FOR EACH ROW 
+ BEGIN
+    INSERT INTO Triggers(logged_data)
+    VALUES (concat("New login : ",NEW.name));
+END //
+
+DELIMITER;
+
