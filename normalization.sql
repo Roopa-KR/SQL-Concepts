@@ -1,0 +1,5 @@
+-- Normlization in SQL
+-- For example, let's say we have a table called "Employees" with the following columns:
+-- emp_id (primary key)
+-- name
+-- department
